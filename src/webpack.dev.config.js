@@ -37,8 +37,8 @@ config.module.loaders = config.module.loaders.map(entry => {
   let {loader} = entry;
   if (/sass/.test(loader)) {
     // returns style!css?sourceMap!sass?sourceMap&outputStyle...
-    loader = loader.replace(/css!/, 'css?sourceMap!');
-    loader = loader.replace(/css$/, 'css?sourceMap');
+    loader = loader.replace(/css!/, 'css!');
+    loader = loader.replace(/css$/, 'css');
     loader = loader.replace(/(outputStyle)/, 'sourceMap&$1');
   }
 
